@@ -6,6 +6,18 @@ Owner: James. Fresh start confirmed this session. This repository contained only
 
 This session completed the available-source reading and wrote `docs/ASSET-INDEX.md`: 46 catalogue entries covering all 62 non-hidden top-level library items, including paired folder/ZIP representations. It groups 3D models, textures, shaders, audio, UI, sprites and scripts; records paths, local licence evidence, intended system uses, missing pieces, source timestamps/hashes and conceptual creature integration points. No game implementation was started.
 
+### Team and ownership — James's briefing, 13 October 2026
+
+- **Astra:** Godot world code, scenes and logic; 3D room blockouts and camera positions; SPEC section 2 exports (structure references, depth maps, door anchors, screen-slot quads); sprites, player characters, NPCs and infected face layers; the single action layer and player IDs.
+- **Claude (chat):** map/logic blueprints in docs/blueprints/, Firefly prompts, plate checks, story and docs. Astra implements blueprint logic; flag incorrect or impractical Godot proposals and suggest a fix before building.
+- **Claude Desktop exclusively:** watch, watch projector, HUD, menu, inventory and comms. Astra must not build these, even as placeholders.
+- **Build authority:** implement only blueprint items tagged Yours or Approved. Suggested needs James's explicit go-ahead; Open and rules absent from a blueprint or SPEC require asking James first. Blueprint scope takes precedence over the earlier proposed build order. No build authorised by this briefing; await the first map/room-graph blueprint.
+- **Future integration:** expose player-ID-based readable state/signals for player identity, flashlight battery, ammo, current room, glitch warnings and chaser alerts as the corresponding approved systems are built. Choose exact interfaces from the blueprints, keep presentation separate, and list every implemented hook here for Claude Desktop. **Hooks created so far: none.**
+- **Current boundary:** write only inside C:/GitHub/nightmare-frequency-godot. All other C:/GitHub folders, including virtual-world, are read-only under this latest instruction. At session start check git status/log -5 and modified dates in docs/ and docs/blueprints/; summarise changes and re-read changed files. Preserve player IDs, one action layer, virus-only green and original names/looks.
+- **World split:** real world is fixed-camera still-photo plates; virtual world is true 3D with 2D-game access points. Virtual demons and seven vice-based hunters cross through screens/glitches into real-world plates; details await approved blueprints/specifications.
+
+Briefing-session check: clean at da3746c, no intervening commits or documentation changes. docs/ contains only ASSET-INDEX.md; docs/SPEC.md and docs/blueprints/ are still absent. This update changes only the handover. No systems, UI placeholders or hooks were built.
+
 ### Write boundary and session rules
 
 - Write only inside `C:\GitHub\nightmare-frequency-godot`. Every other project, the asset library, the similarly named duplicate directory and supplied Desktop files are read-only. Never modify `ancient-tale-original.md`.
@@ -49,4 +61,4 @@ Folder/ZIP comparisons found matching bytes for all shared files. Three archives
 
 Verified all 62 pack paths exist, all 46 pack anchors are unique, type links resolve, and every listed on-disk licence path exists. Source files and library were only read. Only ASSET-INDEX.md and this handover were created. Documentation-only work requires no Godot runtime test; none was claimed. Check the final git commit/remote state for publication status; this entry is included in the same documentation commit as the index.
 
-Next: present the three-system proposal to James. His brief “go” arrived while this catalogue was being completed; it was treated as continuing this requested task, not as choosing unpresented implementation details. Do not expand into virtual-world rules or creature implementation. Confirm the first build scope from his next instruction.
+Next: wait for Claude’s first map and room-graph blueprint in docs/blueprints/. Follow the Team and ownership section above; no implementation starts from this briefing.
