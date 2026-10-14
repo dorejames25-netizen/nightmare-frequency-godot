@@ -8,3 +8,7 @@ Rain is an original simplified Godot interpretation of the HTML generator, not a
 No player controller, UI, combat, room logic or building implemented. Central ground is clear for the forthcoming building plan. No player-state hooks created.
 Use -- --capture for a PNG capture and automatic exit. Normal running loops the effects.
 See licenses/PROVENANCE.md for artwork source and pending licence evidence.
+
+## Mansion shell (provisional)
+Mansion geometry now added from plans/mansion_layout.json: four level volumes reserved, no rooms built. --near selects a 1.7 m eye-height review camera, not a playable FPS controller. Pending plan wall-thickness conflict (up to 20 cm room overlap); shell must not be treated as fully room-fit validated. See HANDOVER.md for outstanding envelope checks.
+Source: C:/GitHub/godot-ai-libary/mansion map plans/layout.json. The updated mansion plans copy was checked and is identical. Floor heights remain blueprint suggestions.

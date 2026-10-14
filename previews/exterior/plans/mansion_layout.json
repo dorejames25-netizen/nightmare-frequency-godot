@@ -1,0 +1,2178 @@
+{
+  "name": "Mansion (working name)",
+  "status": "draft 2: four floors, locks and puzzles. Ground floor traced from the source plan; basement, upper floor and attic designed by Claude on the same footprint. Not yet checked by James or built by Astra.",
+  "units": "metres",
+  "axes": {
+    "x": "to the right on the source drawing",
+    "y": "down the source drawing, from the garden front (top) to the entrance front (bottom)",
+    "godot": "x -> X, y -> Z, floor_y + height -> Y (up). Origin = outer top-left corner of the main block."
+  },
+  "main_block": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 51.2,
+    "d": 26.59,
+    "outer_wall_thickness": 1.67,
+    "interior_wall_thickness": 1.3
+  },
+  "trace": {
+    "source": "reference/source-plan-1807.jpg (1575 x 2000 px)",
+    "origin_px": [
+      240,
+      625
+    ],
+    "metres_per_px": 0.046251,
+    "note": "Scale set from the main block's outer width (1107 px = 51.2 m). The hand-written room sizes on the drawing are in feet and disagree with each other by up to about 10%; the trace wins."
+  },
+  "style": "virtual_wireframe_retrowave",
+  "levels": {
+    "basement": {
+      "name": "Basement",
+      "floor_y": -3.6,
+      "ceiling": 3.2,
+      "rooms": [
+        {
+          "id": "neon_pool",
+          "name": "Neon Pool",
+          "use": "Pool",
+          "shape": "rect",
+          "x": 1.85,
+          "y": 1.62,
+          "w": 10.27,
+          "d": 14.43,
+          "furnish": "Pool 6 x 10 m with LED edge strips, loungers, a light-panel ceiling."
+        },
+        {
+          "id": "plant_room",
+          "name": "Plant Room",
+          "use": "Service",
+          "shape": "rect",
+          "x": 1.85,
+          "y": 17.11,
+          "w": 10.27,
+          "d": 8.0,
+          "furnish": "Pumps, filters, pipe runs. Low and tight."
+        },
+        {
+          "id": "wine_cellar",
+          "name": "Wine Cellar",
+          "use": "Storage",
+          "shape": "rect",
+          "x": 13.64,
+          "y": 1.62,
+          "w": 6.34,
+          "d": 8.33,
+          "furnish": "Floor-to-ceiling bottle racks with edge-lit shelves, a tasting table."
+        },
+        {
+          "id": "mainframe_vault",
+          "name": "Mainframe Vault",
+          "use": "Boss room",
+          "shape": "union",
+          "x": 21.28,
+          "y": -2.31,
+          "w": 16.28,
+          "d": 12.58,
+          "parts": [
+            {
+              "shape": "ellipse",
+              "x": 21.28,
+              "y": -2.31,
+              "w": 8.65,
+              "d": 12.58
+            },
+            {
+              "shape": "rect",
+              "x": 21.28,
+              "y": 1.62,
+              "w": 16.28,
+              "d": 8.33
+            }
+          ],
+          "furnish": "Server racks in rows, cable trunks on the floor, the core in the oval under the lounge.",
+          "joined_from": [
+            "mainframe_core",
+            "mainframe_hall"
+          ]
+        },
+        {
+          "id": "security_room",
+          "name": "Security Room",
+          "use": "Security",
+          "shape": "rect",
+          "x": 39.08,
+          "y": 1.62,
+          "w": 10.27,
+          "d": 8.33,
+          "furnish": "Monitor wall on the top wall, a control desk, a locker."
+        },
+        {
+          "id": "basement_corridor",
+          "name": "Basement Corridor",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 13.64,
+          "y": 10.73,
+          "w": 23.92,
+          "d": 5.32,
+          "furnish": "Long, low corridor; lights die in sequence here."
+        },
+        {
+          "id": "west_stair_basement",
+          "name": "West Stair (basement)",
+          "use": "Stair landing",
+          "shape": "rect",
+          "x": 13.41,
+          "y": 16.88,
+          "w": 5.09,
+          "d": 8.23,
+          "furnish": "Foot of the west stair."
+        },
+        {
+          "id": "storage",
+          "name": "Storage",
+          "use": "Storage",
+          "shape": "rect",
+          "x": 19.8,
+          "y": 17.11,
+          "w": 5.2,
+          "d": 8.0,
+          "furnish": "Crates and shelving."
+        },
+        {
+          "id": "laundry",
+          "name": "Laundry",
+          "use": "Service",
+          "shape": "rect",
+          "x": 26.3,
+          "y": 17.11,
+          "w": 5.2,
+          "d": 8.0,
+          "furnish": "Machines, folding bench."
+        },
+        {
+          "id": "service_landing_basement",
+          "name": "Service Landing (basement)",
+          "use": "Service",
+          "shape": "rect",
+          "x": 32.84,
+          "y": 17.11,
+          "w": 4.72,
+          "d": 8.0,
+          "furnish": "Foot of the spiral stair."
+        },
+        {
+          "id": "battery_room",
+          "name": "Battery Room",
+          "use": "Service",
+          "shape": "rect",
+          "x": 38.25,
+          "y": 10.73,
+          "w": 10.78,
+          "d": 5.69,
+          "furnish": "Battery banks, a charge point for the flashlight."
+        },
+        {
+          "id": "panic_room",
+          "name": "Panic Room",
+          "use": "Safe room",
+          "shape": "rect",
+          "x": 39.08,
+          "y": 17.11,
+          "w": 10.27,
+          "d": 8.0,
+          "furnish": "Steel walls, bunks, supplies, a flashlight charge point. A safe room."
+        }
+      ],
+      "doors": [
+        {
+          "between": [
+            "neon_pool",
+            "basement_corridor"
+          ],
+          "at": [
+            12.88,
+            13.4
+          ],
+          "wall": "v",
+          "width": 1.6,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "plant_room",
+            "neon_pool"
+          ],
+          "at": [
+            7.0,
+            16.58
+          ],
+          "wall": "h",
+          "width": 0.9,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "wine_cellar",
+            "basement_corridor"
+          ],
+          "at": [
+            16.8,
+            10.34
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "mainframe_vault",
+            "basement_corridor"
+          ],
+          "at": [
+            33.0,
+            10.34
+          ],
+          "wall": "h",
+          "width": 2.0,
+          "kind": "door",
+          "lock": "L7",
+          "secret": false
+        },
+        {
+          "between": [
+            "basement_corridor",
+            "west_stair_basement"
+          ],
+          "at": [
+            16.0,
+            16.47
+          ],
+          "wall": "h",
+          "width": 2.0,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "basement_corridor",
+            "storage"
+          ],
+          "at": [
+            22.4,
+            16.58
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "basement_corridor",
+            "laundry"
+          ],
+          "at": [
+            28.9,
+            16.58
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "basement_corridor",
+            "service_landing_basement"
+          ],
+          "at": [
+            35.2,
+            16.58
+          ],
+          "wall": "h",
+          "width": 0.9,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "basement_corridor",
+            "battery_room"
+          ],
+          "at": [
+            37.9,
+            13.4
+          ],
+          "wall": "v",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "battery_room",
+            "security_room"
+          ],
+          "at": [
+            44.0,
+            10.34
+          ],
+          "wall": "h",
+          "width": 1.0,
+          "kind": "door",
+          "lock": "L3",
+          "secret": false
+        },
+        {
+          "between": [
+            "battery_room",
+            "panic_room"
+          ],
+          "at": [
+            44.0,
+            16.77
+          ],
+          "wall": "h",
+          "width": 1.0,
+          "kind": "door",
+          "lock": "L4",
+          "secret": true
+        }
+      ],
+      "exterior": []
+    },
+    "ground": {
+      "name": "Ground floor (principal storey)",
+      "floor_y": 0.0,
+      "ceiling": 5.5,
+      "rooms": [
+        {
+          "id": "arcade_hall",
+          "name": "Arcade Hall",
+          "use": "Arcade",
+          "shape": "rect",
+          "x": 1.85,
+          "y": 1.62,
+          "w": 10.27,
+          "d": 23.5,
+          "furnish": "Two rows of eight arcade cabinets along the long walls, a 3 m aisle down the middle, a prize counter at the bottom end, LED strip along every cabinet top.",
+          "notes": "Full-depth hall on the left end. Longest room: a natural long-corridor shot."
+        },
+        {
+          "id": "synth_lounge",
+          "name": "Synth Lounge",
+          "use": "Music room",
+          "shape": "rect",
+          "x": 13.64,
+          "y": 1.62,
+          "w": 6.34,
+          "d": 8.33,
+          "furnish": "Synth keyboards on stands, a modular synth wall, low sofas, a vinyl wall.",
+          "notes": ""
+        },
+        {
+          "id": "oval_lounge",
+          "name": "Oval Lounge",
+          "use": "Garden lounge",
+          "shape": "ellipse",
+          "x": 21.28,
+          "y": -2.31,
+          "w": 8.65,
+          "d": 12.58,
+          "furnish": "Curved sofa following the oval, a round holo table in the middle, glass doors to the south portico.",
+          "notes": "Ellipse. Its curved south wall bows out into the south portico."
+        },
+        {
+          "id": "kitchen",
+          "name": "Kitchen",
+          "use": "Kitchen",
+          "shape": "rect",
+          "x": 31.22,
+          "y": 1.62,
+          "w": 6.34,
+          "d": 8.33,
+          "furnish": "Island with a light-panel top, wall of steel appliances, bar stools.",
+          "notes": ""
+        },
+        {
+          "id": "living_room",
+          "name": "Living Room",
+          "use": "Living room",
+          "shape": "rect",
+          "x": 39.08,
+          "y": 1.62,
+          "w": 10.27,
+          "d": 8.33,
+          "furnish": "Huge projector screen on the right-hand wall, a long modular sofa facing it, a projector on the ceiling, a low glass table, a terrace door.",
+          "notes": ""
+        },
+        {
+          "id": "vestibule_left",
+          "name": "Vestibule (left)",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 13.64,
+          "y": 10.73,
+          "w": 7.63,
+          "d": 5.32,
+          "furnish": "Coat niches in the apse.",
+          "notes": "Apse (half-round end) on the right side."
+        },
+        {
+          "id": "gallery",
+          "name": "Gallery",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 21.28,
+          "y": 10.27,
+          "w": 8.65,
+          "d": 4.3,
+          "furnish": "Column screen on the lounge side, light-panel ceiling, display plinths.",
+          "notes": "Column screen on the oval-room side."
+        },
+        {
+          "id": "closet_left",
+          "name": "Closet (left)",
+          "use": "Storage",
+          "shape": "rect",
+          "x": 21.28,
+          "y": 14.57,
+          "w": 2.31,
+          "d": 2.31,
+          "furnish": "Shelving.",
+          "notes": "Trapezoid on the plan; box in blockout."
+        },
+        {
+          "id": "central_link",
+          "name": "Central Link",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 23.59,
+          "y": 14.57,
+          "w": 4.02,
+          "d": 2.31,
+          "furnish": "Column screen on the hall side.",
+          "notes": "Column screen on the hall side."
+        },
+        {
+          "id": "closet_right",
+          "name": "Closet (right)",
+          "use": "Storage",
+          "shape": "rect",
+          "x": 27.61,
+          "y": 14.57,
+          "w": 2.31,
+          "d": 2.31,
+          "furnish": "Shelving.",
+          "notes": "Trapezoid on the plan; box in blockout."
+        },
+        {
+          "id": "vestibule_right",
+          "name": "Vestibule (right)",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 29.92,
+          "y": 10.73,
+          "w": 7.63,
+          "d": 5.32,
+          "furnish": "Coat niches in the apse.",
+          "notes": "Apse on the left side."
+        },
+        {
+          "id": "east_stair",
+          "name": "East Stair",
+          "use": "Stair (ground to upper)",
+          "shape": "rect",
+          "x": 38.25,
+          "y": 10.73,
+          "w": 10.78,
+          "d": 5.69,
+          "furnish": "Two-flight stair, buffet niche on the living-room side, keypad on the wall at the foot of the stair.",
+          "notes": "Two-flight stair at x 40.9-47.5 m. Buffet niche on the dining-room side."
+        },
+        {
+          "id": "west_stair",
+          "name": "West Stair",
+          "use": "Stair (basement, ground, upper)",
+          "shape": "rect",
+          "x": 13.41,
+          "y": 16.88,
+          "w": 5.09,
+          "d": 8.23,
+          "furnish": "Two parallel flights; the down flight to the basement sits under the up flight.",
+          "notes": "Two parallel flights; landing strip along the north wall."
+        },
+        {
+          "id": "entrance_hall",
+          "name": "Entrance Hall",
+          "use": "Hall",
+          "shape": "rect",
+          "x": 19.19,
+          "y": 17.11,
+          "w": 12.81,
+          "d": 5.64,
+          "furnish": "Ring of eight columns, a round light ring in the ceiling over the central circle, niches in both end walls.",
+          "notes": "Ring of 8 columns around a central circle; niches in both end walls."
+        },
+        {
+          "id": "north_passage_left",
+          "name": "North Passage (left)",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 18.5,
+          "y": 22.76,
+          "w": 3.7,
+          "d": 2.36,
+          "furnish": "",
+          "notes": ""
+        },
+        {
+          "id": "security_booth",
+          "name": "Security Booth",
+          "use": "Security",
+          "shape": "rect",
+          "x": 22.2,
+          "y": 22.76,
+          "w": 2.22,
+          "d": 2.36,
+          "furnish": "Desk, door-camera monitors.",
+          "notes": ""
+        },
+        {
+          "id": "front_lobby",
+          "name": "Front Lobby",
+          "use": "Entrance",
+          "shape": "circle",
+          "x": 24.42,
+          "y": 22.76,
+          "w": 2.36,
+          "d": 2.36,
+          "furnish": "Round lobby; the front door is in its bottom wall.",
+          "notes": "Round on the plan (circle, about 2.4 m across). Main front door is in its north wall."
+        },
+        {
+          "id": "coat_room",
+          "name": "Coat Room",
+          "use": "Storage",
+          "shape": "rect",
+          "x": 26.78,
+          "y": 22.76,
+          "w": 2.22,
+          "d": 2.36,
+          "furnish": "Coat rails.",
+          "notes": ""
+        },
+        {
+          "id": "north_passage_right",
+          "name": "North Passage (right)",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 29.0,
+          "y": 22.76,
+          "w": 3.84,
+          "d": 2.36,
+          "furnish": "",
+          "notes": ""
+        },
+        {
+          "id": "study",
+          "name": "Study",
+          "use": "Study",
+          "shape": "rect",
+          "x": 32.84,
+          "y": 17.11,
+          "w": 4.16,
+          "d": 8.0,
+          "furnish": "Desk, wall of shelves; the spiral service stair stands in the top-left corner.",
+          "notes": "Small spiral service stair in the top-left corner (x 32.9-35.7, y 17.8-19.6 m)."
+        },
+        {
+          "id": "washroom",
+          "name": "Washroom",
+          "use": "Washroom",
+          "shape": "rect",
+          "x": 38.02,
+          "y": 17.11,
+          "w": 2.68,
+          "d": 1.85,
+          "furnish": "",
+          "notes": ""
+        },
+        {
+          "id": "guest_dressing",
+          "name": "Guest Dressing Room",
+          "use": "Dressing",
+          "shape": "rect",
+          "x": 38.02,
+          "y": 18.96,
+          "w": 2.68,
+          "d": 6.15,
+          "furnish": "Wardrobe wall, mirror with an LED surround.",
+          "notes": ""
+        },
+        {
+          "id": "guest_bedroom",
+          "name": "Guest Bedroom",
+          "use": "Bedroom",
+          "shape": "rect",
+          "x": 41.95,
+          "y": 17.11,
+          "w": 5.32,
+          "d": 8.0,
+          "furnish": "Bed in the alcove, edge-lit side panels.",
+          "notes": ""
+        },
+        {
+          "id": "guest_alcove",
+          "name": "Guest Bed Alcove",
+          "use": "Bedroom",
+          "shape": "rect",
+          "x": 47.27,
+          "y": 17.81,
+          "w": 1.76,
+          "d": 5.78,
+          "furnish": "The bed.",
+          "notes": "Recess off the bed chamber."
+        },
+        {
+          "id": "service_passage",
+          "name": "Service Passage",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 32.01,
+          "y": 16.05,
+          "w": 5.92,
+          "d": 1.06,
+          "furnish": "Narrow, about 1 m.",
+          "notes": "Narrow service passage (about 1 m) from the right vestibule to the sitting room."
+        }
+      ],
+      "doors": [
+        {
+          "between": [
+            "arcade_hall",
+            "synth_lounge"
+          ],
+          "at": [
+            12.86,
+            5.55
+          ],
+          "wall": "v",
+          "width": 1.4,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "arcade_hall",
+            "vestibule_left"
+          ],
+          "at": [
+            12.86,
+            13.64
+          ],
+          "wall": "v",
+          "width": 1.4,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "synth_lounge",
+            "vestibule_left"
+          ],
+          "at": [
+            15.59,
+            10.31
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "synth_lounge",
+            "oval_lounge"
+          ],
+          "at": [
+            20.63,
+            6.01
+          ],
+          "wall": "v",
+          "width": 1.4,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "oval_lounge",
+            "kitchen"
+          ],
+          "at": [
+            30.57,
+            6.01
+          ],
+          "wall": "v",
+          "width": 1.4,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "oval_lounge",
+            "gallery"
+          ],
+          "at": [
+            25.6,
+            10.27
+          ],
+          "wall": "h",
+          "width": 7.2,
+          "kind": "column_screen",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "kitchen",
+            "vestibule_right"
+          ],
+          "at": [
+            35.61,
+            10.31
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "kitchen",
+            "living_room"
+          ],
+          "at": [
+            38.3,
+            5.55
+          ],
+          "wall": "v",
+          "width": 1.4,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "vestibule_left",
+            "gallery"
+          ],
+          "at": [
+            21.28,
+            13.41
+          ],
+          "wall": "v",
+          "width": 1.4,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "gallery",
+            "vestibule_right"
+          ],
+          "at": [
+            29.92,
+            13.41
+          ],
+          "wall": "v",
+          "width": 1.4,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "gallery",
+            "central_link"
+          ],
+          "at": [
+            25.6,
+            14.57
+          ],
+          "wall": "h",
+          "width": 4.0,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "central_link",
+            "closet_left"
+          ],
+          "at": [
+            23.59,
+            15.73
+          ],
+          "wall": "v",
+          "width": 0.8,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "central_link",
+            "closet_right"
+          ],
+          "at": [
+            27.61,
+            15.73
+          ],
+          "wall": "v",
+          "width": 0.8,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "central_link",
+            "entrance_hall"
+          ],
+          "at": [
+            25.6,
+            16.88
+          ],
+          "wall": "h",
+          "width": 4.0,
+          "kind": "column_screen",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "vestibule_right",
+            "east_stair"
+          ],
+          "at": [
+            37.93,
+            13.18
+          ],
+          "wall": "v",
+          "width": 1.6,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "living_room",
+            "east_stair"
+          ],
+          "at": [
+            39.78,
+            10.31
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "vestibule_left",
+            "west_stair"
+          ],
+          "at": [
+            15.59,
+            16.42
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "vestibule_left",
+            "entrance_hall"
+          ],
+          "at": [
+            19.89,
+            16.56
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "west_stair",
+            "north_passage_left"
+          ],
+          "at": [
+            18.5,
+            23.96
+          ],
+          "wall": "v",
+          "width": 2.0,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "north_passage_left",
+            "security_booth"
+          ],
+          "at": [
+            22.2,
+            23.96
+          ],
+          "wall": "v",
+          "width": 1.0,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "security_booth",
+            "front_lobby"
+          ],
+          "at": [
+            24.42,
+            23.96
+          ],
+          "wall": "v",
+          "width": 1.0,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "front_lobby",
+            "coat_room"
+          ],
+          "at": [
+            26.78,
+            23.96
+          ],
+          "wall": "v",
+          "width": 1.0,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "coat_room",
+            "north_passage_right"
+          ],
+          "at": [
+            29.0,
+            23.96
+          ],
+          "wall": "v",
+          "width": 1.0,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "entrance_hall",
+            "front_lobby"
+          ],
+          "at": [
+            25.6,
+            22.76
+          ],
+          "wall": "h",
+          "width": 1.6,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "north_passage_right",
+            "study"
+          ],
+          "at": [
+            32.84,
+            23.96
+          ],
+          "wall": "v",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "vestibule_right",
+            "service_passage"
+          ],
+          "at": [
+            31.31,
+            16.19
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "service_passage",
+            "study"
+          ],
+          "at": [
+            34.92,
+            17.11
+          ],
+          "wall": "h",
+          "width": 1.0,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "washroom",
+            "guest_dressing"
+          ],
+          "at": [
+            39.31,
+            18.96
+          ],
+          "wall": "h",
+          "width": 0.9,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "study",
+            "guest_dressing"
+          ],
+          "at": [
+            37.51,
+            21.97
+          ],
+          "wall": "v",
+          "width": 1.0,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "guest_dressing",
+            "guest_bedroom"
+          ],
+          "at": [
+            41.3,
+            21.97
+          ],
+          "wall": "v",
+          "width": 1.0,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "east_stair",
+            "guest_bedroom"
+          ],
+          "at": [
+            44.4,
+            16.79
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "guest_bedroom",
+            "guest_alcove"
+          ],
+          "at": [
+            47.27,
+            20.67
+          ],
+          "wall": "v",
+          "width": 3.5,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "front_lobby",
+            "north_portico"
+          ],
+          "at": [
+            25.6,
+            25.85
+          ],
+          "wall": "h",
+          "width": 2.0,
+          "kind": "main_entrance",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "oval_lounge",
+            "south_portico"
+          ],
+          "at": [
+            25.6,
+            -2.31
+          ],
+          "wall": "h",
+          "width": 1.6,
+          "kind": "garden_door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "arcade_hall",
+            "platform_left"
+          ],
+          "at": [
+            0.93,
+            9.02
+          ],
+          "wall": "v",
+          "width": 1.4,
+          "kind": "terrace_door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "living_room",
+            "platform_right"
+          ],
+          "at": [
+            50.27,
+            9.02
+          ],
+          "wall": "v",
+          "width": 1.4,
+          "kind": "terrace_door",
+          "lock": null,
+          "secret": false
+        }
+      ],
+      "exterior": [
+        {
+          "id": "south_portico",
+          "name": "South Portico",
+          "plan_label": "Portico (south, round)",
+          "shape": "semicircle",
+          "centre": [
+            25.6,
+            0.69
+          ],
+          "radius": 8.33,
+          "notes": "Ring of columns. Steps down to the South Entrance garden at x 19.0-32.4, y -15.5 to -7.2 m."
+        },
+        {
+          "id": "north_portico",
+          "name": "North Portico",
+          "plan_label": "Portico (north)",
+          "shape": "rect",
+          "x": 18.04,
+          "y": 26.59,
+          "w": 15.12,
+          "d": 2.87,
+          "notes": "Columned porch over the carriage way. Main approach."
+        },
+        {
+          "id": "platform_left",
+          "name": "Terrace (left)",
+          "plan_label": "Platform",
+          "shape": "rect",
+          "x": -7.86,
+          "y": 5.23,
+          "w": 7.86,
+          "d": 7.72,
+          "notes": "Open terrace off the Public Drawing Room."
+        },
+        {
+          "id": "platform_right",
+          "name": "Terrace (right)",
+          "plan_label": "Platform",
+          "shape": "rect",
+          "x": 51.2,
+          "y": 5.23,
+          "w": 7.77,
+          "d": 7.72,
+          "notes": "Open terrace off the Dining Room."
+        }
+      ]
+    },
+    "upper": {
+      "name": "Upper floor",
+      "floor_y": 6.0,
+      "ceiling": 4.0,
+      "rooms": [
+        {
+          "id": "cinema",
+          "name": "Cinema",
+          "use": "Cinema",
+          "shape": "rect",
+          "x": 1.85,
+          "y": 1.62,
+          "w": 10.27,
+          "d": 23.49,
+          "furnish": "Huge projector screen on the top wall, four tiers of recliners stepping down toward it, a projector booth slot in the bottom wall."
+        },
+        {
+          "id": "bedroom_west",
+          "name": "Bedroom (west)",
+          "use": "Bedroom",
+          "shape": "rect",
+          "x": 13.64,
+          "y": 1.62,
+          "w": 6.34,
+          "d": 8.33,
+          "furnish": "Bed, edge-lit headboard, desk."
+        },
+        {
+          "id": "oval_study",
+          "name": "Oval Study",
+          "use": "Study",
+          "shape": "ellipse",
+          "x": 21.28,
+          "y": -2.31,
+          "w": 8.65,
+          "d": 12.58,
+          "furnish": "Desk facing the bow windows, curved shelving."
+        },
+        {
+          "id": "bedroom_east",
+          "name": "Bedroom (east)",
+          "use": "Bedroom",
+          "shape": "rect",
+          "x": 31.22,
+          "y": 1.62,
+          "w": 6.34,
+          "d": 8.33,
+          "furnish": "Bed, edge-lit headboard, desk."
+        },
+        {
+          "id": "master_bedroom",
+          "name": "Master Bedroom",
+          "use": "Bedroom",
+          "shape": "rect",
+          "x": 39.08,
+          "y": 1.62,
+          "w": 10.27,
+          "d": 8.33,
+          "furnish": "Large bed, a sunken seating corner, a wall screen."
+        },
+        {
+          "id": "upper_gallery",
+          "name": "Upper Gallery",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 13.64,
+          "y": 10.73,
+          "w": 23.92,
+          "d": 5.32,
+          "furnish": "Long landing; light-panel ceiling; a long-corridor shot end to end."
+        },
+        {
+          "id": "west_stair_upper",
+          "name": "West Stair (upper)",
+          "use": "Stair landing",
+          "shape": "rect",
+          "x": 13.41,
+          "y": 16.88,
+          "w": 5.09,
+          "d": 8.23,
+          "furnish": "Top of the west stair."
+        },
+        {
+          "id": "bathroom",
+          "name": "Bathroom",
+          "use": "Bathroom",
+          "shape": "rect",
+          "x": 19.8,
+          "y": 17.11,
+          "w": 5.2,
+          "d": 8.0,
+          "furnish": "Walk-in shower, LED mirror."
+        },
+        {
+          "id": "sim_pod_room",
+          "name": "Sim Pod Room",
+          "use": "Games",
+          "shape": "rect",
+          "x": 26.3,
+          "y": 17.11,
+          "w": 5.2,
+          "d": 8.0,
+          "furnish": "Two reclining sim pods with visors, cable trays overhead."
+        },
+        {
+          "id": "service_landing_upper",
+          "name": "Service Landing (upper)",
+          "use": "Service",
+          "shape": "rect",
+          "x": 32.84,
+          "y": 17.11,
+          "w": 4.72,
+          "d": 8.0,
+          "furnish": "Spiral stair, linen shelves."
+        },
+        {
+          "id": "east_stair_upper",
+          "name": "East Stair (upper)",
+          "use": "Stair landing",
+          "shape": "rect",
+          "x": 38.25,
+          "y": 10.73,
+          "w": 10.78,
+          "d": 5.69,
+          "furnish": "Private landing to the master suite."
+        },
+        {
+          "id": "master_bath",
+          "name": "Master Bathroom",
+          "use": "Bathroom",
+          "shape": "rect",
+          "x": 39.08,
+          "y": 17.11,
+          "w": 4.82,
+          "d": 8.0,
+          "furnish": "Freestanding bath, LED mirror."
+        },
+        {
+          "id": "wardrobe",
+          "name": "Walk-in Wardrobe",
+          "use": "Dressing",
+          "shape": "rect",
+          "x": 45.2,
+          "y": 17.11,
+          "w": 4.15,
+          "d": 8.0,
+          "furnish": "Lit rails and drawers."
+        }
+      ],
+      "doors": [
+        {
+          "between": [
+            "cinema",
+            "upper_gallery"
+          ],
+          "at": [
+            12.88,
+            13.4
+          ],
+          "wall": "v",
+          "width": 1.6,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "bedroom_west",
+            "upper_gallery"
+          ],
+          "at": [
+            16.8,
+            10.34
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "oval_study",
+            "upper_gallery"
+          ],
+          "at": [
+            25.6,
+            10.5
+          ],
+          "wall": "h",
+          "width": 1.4,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "bedroom_east",
+            "upper_gallery"
+          ],
+          "at": [
+            34.4,
+            10.34
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "upper_gallery",
+            "west_stair_upper"
+          ],
+          "at": [
+            16.0,
+            16.47
+          ],
+          "wall": "h",
+          "width": 2.0,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "upper_gallery",
+            "bathroom"
+          ],
+          "at": [
+            22.4,
+            16.58
+          ],
+          "wall": "h",
+          "width": 0.9,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "upper_gallery",
+            "sim_pod_room"
+          ],
+          "at": [
+            28.9,
+            16.58
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "upper_gallery",
+            "service_landing_upper"
+          ],
+          "at": [
+            35.2,
+            16.58
+          ],
+          "wall": "h",
+          "width": 0.9,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "upper_gallery",
+            "east_stair_upper"
+          ],
+          "at": [
+            37.9,
+            13.4
+          ],
+          "wall": "v",
+          "width": 1.6,
+          "kind": "opening",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "east_stair_upper",
+            "master_bedroom"
+          ],
+          "at": [
+            44.0,
+            10.34
+          ],
+          "wall": "h",
+          "width": 1.4,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "east_stair_upper",
+            "master_bath"
+          ],
+          "at": [
+            41.5,
+            16.77
+          ],
+          "wall": "h",
+          "width": 0.9,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "master_bath",
+            "wardrobe"
+          ],
+          "at": [
+            44.55,
+            21.0
+          ],
+          "wall": "v",
+          "width": 0.9,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        }
+      ],
+      "exterior": []
+    },
+    "attic": {
+      "name": "Attic",
+      "floor_y": 10.4,
+      "ceiling": 4.2,
+      "eaves": 2.2,
+      "note": "Sloped roof: 2.2 m at the outer walls rising to 4.2 m at the centre line (y 13.3).",
+      "rooms": [
+        {
+          "id": "storage_loft",
+          "name": "Storage Loft",
+          "use": "Storage",
+          "shape": "rect",
+          "x": 1.85,
+          "y": 1.62,
+          "w": 10.27,
+          "d": 23.49,
+          "furnish": "Old furniture under sheets, boxes, roof beams."
+        },
+        {
+          "id": "forgotten_bedroom",
+          "name": "Forgotten Bedroom",
+          "use": "Bedroom",
+          "shape": "rect",
+          "x": 13.64,
+          "y": 1.62,
+          "w": 6.34,
+          "d": 8.33,
+          "furnish": "A child's room left as it was."
+        },
+        {
+          "id": "radio_room",
+          "name": "Radio Room",
+          "use": "Transmitter",
+          "shape": "rect",
+          "x": 21.28,
+          "y": 1.62,
+          "w": 16.28,
+          "d": 8.33,
+          "furnish": "Transmitter racks, a tuning desk with a large dial, the antenna mast base through the roof."
+        },
+        {
+          "id": "observatory",
+          "name": "Observatory",
+          "use": "Observatory",
+          "shape": "rect",
+          "x": 39.08,
+          "y": 1.62,
+          "w": 10.27,
+          "d": 8.33,
+          "furnish": "Telescope under a roof slot, star charts on the walls."
+        },
+        {
+          "id": "attic_corridor",
+          "name": "Attic Corridor",
+          "use": "Circulation",
+          "shape": "rect",
+          "x": 13.64,
+          "y": 10.73,
+          "w": 35.71,
+          "d": 5.32,
+          "furnish": "Runs under the roof ridge."
+        },
+        {
+          "id": "tank_loft",
+          "name": "Tank Loft",
+          "use": "Service",
+          "shape": "rect",
+          "x": 13.64,
+          "y": 17.11,
+          "w": 17.86,
+          "d": 8.0,
+          "furnish": "Water tanks, ducting."
+        },
+        {
+          "id": "attic_landing",
+          "name": "Attic Landing",
+          "use": "Service",
+          "shape": "rect",
+          "x": 32.84,
+          "y": 17.11,
+          "w": 4.72,
+          "d": 8.0,
+          "furnish": "Top of the spiral stair."
+        },
+        {
+          "id": "hidden_archive",
+          "name": "Hidden Archive",
+          "use": "Secret room",
+          "shape": "rect",
+          "x": 39.08,
+          "y": 17.11,
+          "w": 10.27,
+          "d": 8.0,
+          "furnish": "Files, glyph rubbings, a lore room."
+        }
+      ],
+      "doors": [
+        {
+          "between": [
+            "storage_loft",
+            "attic_corridor"
+          ],
+          "at": [
+            12.88,
+            13.4
+          ],
+          "wall": "v",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "forgotten_bedroom",
+            "attic_corridor"
+          ],
+          "at": [
+            16.8,
+            10.34
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "radio_room",
+            "attic_corridor"
+          ],
+          "at": [
+            29.4,
+            10.34
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": "L6",
+          "secret": false
+        },
+        {
+          "between": [
+            "observatory",
+            "attic_corridor"
+          ],
+          "at": [
+            44.0,
+            10.34
+          ],
+          "wall": "h",
+          "width": 1.2,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "attic_corridor",
+            "tank_loft"
+          ],
+          "at": [
+            22.4,
+            16.58
+          ],
+          "wall": "h",
+          "width": 0.9,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "attic_corridor",
+            "attic_landing"
+          ],
+          "at": [
+            35.2,
+            16.58
+          ],
+          "wall": "h",
+          "width": 0.9,
+          "kind": "door",
+          "lock": null,
+          "secret": false
+        },
+        {
+          "between": [
+            "attic_landing",
+            "hidden_archive"
+          ],
+          "at": [
+            38.32,
+            21.0
+          ],
+          "wall": "v",
+          "width": 0.9,
+          "kind": "door",
+          "lock": "L8",
+          "secret": true
+        }
+      ],
+      "exterior": []
+    }
+  },
+  "stairs": [
+    {
+      "id": "west_stair_down",
+      "kind": "stair",
+      "from": [
+        "ground",
+        "west_stair"
+      ],
+      "to": [
+        "basement",
+        "west_stair_basement"
+      ],
+      "lock": "L2",
+      "footprint": {
+        "x": 13.41,
+        "y": 16.88,
+        "w": 5.09,
+        "d": 8.23
+      }
+    },
+    {
+      "id": "west_stair_up",
+      "kind": "stair",
+      "from": [
+        "ground",
+        "west_stair"
+      ],
+      "to": [
+        "upper",
+        "west_stair_upper"
+      ],
+      "lock": "L1",
+      "footprint": {
+        "x": 13.41,
+        "y": 16.88,
+        "w": 5.09,
+        "d": 8.23
+      }
+    },
+    {
+      "id": "east_stair_up",
+      "kind": "stair",
+      "from": [
+        "ground",
+        "east_stair"
+      ],
+      "to": [
+        "upper",
+        "east_stair_upper"
+      ],
+      "lock": "L1",
+      "footprint": {
+        "x": 40.9,
+        "y": 11.2,
+        "w": 6.6,
+        "d": 4.8
+      }
+    },
+    {
+      "id": "spiral_basement",
+      "kind": "spiral_stair",
+      "from": [
+        "ground",
+        "study"
+      ],
+      "to": [
+        "basement",
+        "service_landing_basement"
+      ],
+      "lock": "L2",
+      "footprint": {
+        "x": 32.9,
+        "y": 17.8,
+        "w": 2.8,
+        "d": 1.8
+      }
+    },
+    {
+      "id": "spiral_upper",
+      "kind": "spiral_stair",
+      "from": [
+        "ground",
+        "study"
+      ],
+      "to": [
+        "upper",
+        "service_landing_upper"
+      ],
+      "lock": "L1",
+      "footprint": {
+        "x": 32.9,
+        "y": 17.8,
+        "w": 2.8,
+        "d": 1.8
+      }
+    },
+    {
+      "id": "spiral_attic",
+      "kind": "spiral_stair",
+      "from": [
+        "upper",
+        "service_landing_upper"
+      ],
+      "to": [
+        "attic",
+        "attic_landing"
+      ],
+      "lock": "L5",
+      "footprint": {
+        "x": 32.9,
+        "y": 17.8,
+        "w": 2.8,
+        "d": 1.8
+      }
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "name": "Upstairs seal",
+      "opened_by": [
+        "P1"
+      ],
+      "mode": "all",
+      "on": "All three stairs from the ground floor up (west, east, spiral)."
+    },
+    {
+      "id": "L2",
+      "name": "Basement hatch",
+      "opened_by": [
+        "H1"
+      ],
+      "mode": "all",
+      "on": "The west stair down and the spiral stair down."
+    },
+    {
+      "id": "L3",
+      "name": "Security door",
+      "opened_by": [
+        "H2"
+      ],
+      "mode": "all",
+      "on": "Battery Room to Security Room."
+    },
+    {
+      "id": "L4",
+      "name": "Panic room wall",
+      "opened_by": [
+        "P2"
+      ],
+      "mode": "all",
+      "on": "Secret door, Battery Room to Panic Room. Looks like plain wall until it opens."
+    },
+    {
+      "id": "L5",
+      "name": "Attic hatch",
+      "opened_by": [
+        "P3"
+      ],
+      "mode": "all",
+      "on": "Spiral stair, upper floor to attic."
+    },
+    {
+      "id": "L6",
+      "name": "Radio room door",
+      "opened_by": [
+        "P4"
+      ],
+      "mode": "all",
+      "on": "Attic Corridor to Radio Room."
+    },
+    {
+      "id": "L7",
+      "name": "Mainframe vault door",
+      "opened_by": [
+        "P5",
+        "K1"
+      ],
+      "mode": "all",
+      "on": "Basement Corridor to Mainframe Vault. Needs the radio tuned AND the access key."
+    },
+    {
+      "id": "L8",
+      "name": "Archive panel",
+      "opened_by": [
+        "H4"
+      ],
+      "mode": "all",
+      "on": "Secret door, Attic Landing to Hidden Archive."
+    }
+  ],
+  "triggers": [
+    {
+      "id": "P1",
+      "type": "puzzle",
+      "name": "High-score code",
+      "level": "ground",
+      "room": "arcade_hall",
+      "at": [
+        3.5,
+        20.0,
+        1.2
+      ],
+      "input": {
+        "level": "ground",
+        "room": "east_stair",
+        "at": [
+          44.0,
+          15.6,
+          1.3
+        ]
+      },
+      "how": "One cabinet's attract screen shows the top-five score table. The initials beside the scores spell a four-glyph code. Enter it on the keypad at the foot of the east stair."
+    },
+    {
+      "id": "H1",
+      "type": "hidden_button",
+      "name": "Button behind the screen",
+      "level": "ground",
+      "room": "living_room",
+      "at": [
+        49.2,
+        7.2,
+        0.4
+      ],
+      "reveal": "flashlight",
+      "how": "A recessed button under the bottom-right corner of the projector screen frame. Only visible in the flashlight beam."
+    },
+    {
+      "id": "H2",
+      "type": "hidden_button",
+      "name": "Empty rack slot",
+      "level": "basement",
+      "room": "wine_cellar",
+      "at": [
+        14.2,
+        5.0,
+        1.0
+      ],
+      "reveal": "flashlight",
+      "how": "One bottle slot in the left rack holds a button instead of a bottle."
+    },
+    {
+      "id": "P2",
+      "type": "puzzle",
+      "name": "Camera grid",
+      "level": "basement",
+      "room": "security_room",
+      "at": [
+        44.0,
+        4.0,
+        1.0
+      ],
+      "how": "Cycle the eight monitors until all of them show the same room. The room they agree on is the Battery Room, and the wall there opens."
+    },
+    {
+      "id": "K1",
+      "type": "item",
+      "name": "Access key",
+      "level": "basement",
+      "room": "panic_room",
+      "at": [
+        46.0,
+        22.0,
+        1.0
+      ],
+      "how": "A key card in the panic room's locker."
+    },
+    {
+      "id": "P3",
+      "type": "puzzle",
+      "name": "Wireframe maze",
+      "level": "upper",
+      "room": "sim_pod_room",
+      "at": [
+        28.9,
+        22.0,
+        1.0
+      ],
+      "how": "Sit in a sim pod and walk a wireframe maze. Reaching its centre releases the attic hatch."
+    },
+    {
+      "id": "P4",
+      "type": "puzzle",
+      "name": "Star chart",
+      "level": "attic",
+      "room": "observatory",
+      "at": [
+        44.0,
+        5.5,
+        1.2
+      ],
+      "how": "Turn the telescope to the three marks drawn on the chart. When all three line up, the radio room door unlocks."
+    },
+    {
+      "id": "H4",
+      "type": "hidden_button",
+      "name": "Telescope base",
+      "level": "attic",
+      "room": "observatory",
+      "at": [
+        47.5,
+        3.0,
+        0.3
+      ],
+      "reveal": "flashlight",
+      "how": "A button on the back of the telescope's base."
+    },
+    {
+      "id": "P5",
+      "type": "puzzle",
+      "name": "Tune the frequency",
+      "level": "attic",
+      "room": "radio_room",
+      "at": [
+        29.0,
+        4.0,
+        1.1
+      ],
+      "how": "Turn the big dial until the static clears. The right setting is written in the Hidden Archive and on the Forgotten Bedroom's wall."
+    }
+  ],
+  "screens": [
+    {
+      "id": "living_room_projector",
+      "level": "ground",
+      "room": "living_room",
+      "wall": "right",
+      "centre": 4.4,
+      "width": 5.0,
+      "height": 2.8,
+      "bottom": 0.9,
+      "kind": "projector"
+    },
+    {
+      "id": "cinema_projector",
+      "level": "upper",
+      "room": "cinema",
+      "wall": "top",
+      "centre": 6.98,
+      "width": 8.0,
+      "height": 4.0,
+      "bottom": 0.6,
+      "kind": "projector"
+    },
+    {
+      "id": "security_monitor_wall",
+      "level": "basement",
+      "room": "security_room",
+      "wall": "top",
+      "centre": 44.2,
+      "width": 6.0,
+      "height": 2.4,
+      "bottom": 0.9,
+      "kind": "monitor_wall_2x4"
+    },
+    {
+      "id": "master_bedroom_screen",
+      "level": "upper",
+      "room": "master_bedroom",
+      "wall": "right",
+      "centre": 5.8,
+      "width": 2.4,
+      "height": 1.4,
+      "bottom": 1.0,
+      "kind": "wall_screen"
+    }
+  ],
+  "solve_order": [
+    "P1",
+    "H1",
+    "[L1 opens]",
+    "[L2 opens]",
+    "H2",
+    "P3",
+    "[L3 opens]",
+    "[L5 opens]",
+    "P2",
+    "P4",
+    "H4",
+    "[L4 opens]",
+    "[L6 opens]",
+    "[L8 opens]",
+    "K1",
+    "P5",
+    "[L7 opens]"
+  ]
+}

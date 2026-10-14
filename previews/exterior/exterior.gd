@@ -5,7 +5,7 @@ var stars: Array[MeshInstance3D] = []
 var camera: Camera3D
 func height_at(x: float,z: float) -> float:
 	var edge := smoothstep(28.0,95.0,abs(x))
-	var rear := smoothstep(35.0,115.0,-z)
+	var rear := smoothstep(60.0,115.0,-z)
 	return edge*(5.0+7.0*sin(x*0.067+z*0.043)*sin(z*0.061)) + rear*(3.0+4.0*sin(x*0.08))
 func _ready() -> void:
 	var env := WorldEnvironment.new()
@@ -19,6 +19,9 @@ func _ready() -> void:
 	camera.far=1000
 	add_child(camera)
 	camera.look_at(Vector3(0,30,-160))
+	if "--near" in OS.get_cmdline_user_args():
+		camera.position=Vector3(22,1.7,33)
+		camera.look_at(Vector3(0,6,-28))
 	var surface := SurfaceTool.new()
 	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
 	for z in range(-120,120,3):
@@ -27,6 +30,8 @@ func _ready() -> void:
 			var b=Vector3(x+3,height_at(x+3,z),z)
 			var c=Vector3(x,height_at(x,z+3),z+3)
 			var d=Vector3(x+3,height_at(x+3,z+3),z+3)
+			if x >= -27 and x < 27 and z >= -48 and z < -12:
+				continue # Basement excavation; exterior shell covers the opening.
 			for v in [a,c,b,b,c,d]: surface.add_vertex(v)
 	surface.generate_normals()
 	var ground:=MeshInstance3D.new()
@@ -36,6 +41,9 @@ func _ready() -> void:
 	ground.material_override=grid
 	add_child(ground)
 	ground.create_trimesh_collision()
+	var mansion:=Node3D.new()
+	mansion.set_script(load("res://mansion.gd"))
+	add_child(mansion)
 	# Supplied artwork is a distant scenic card; terrain remains actual 3D.
 	var horizon:=MeshInstance3D.new()
 	var quad:=QuadMesh.new()
@@ -84,8 +92,12 @@ func _process(_delta: float) -> void:
 		m.albedo_color=Color(0.5,0.8,1.0)*(0.45+0.55*pow(0.5+0.5*sin(seconds*(0.6+float(i%7)*0.13)+i*1.7),3))
 	if "--capture" in OS.get_cmdline_user_args() and frame==100:
 		await RenderingServer.frame_post_draw
-		get_viewport().get_texture().get_image().save_png("res://captures/exterior.png")
+		get_viewport().get_texture().get_image().save_png("res://captures/mansion_first_person.png" if "--near" in OS.get_cmdline_user_args() else "res://captures/exterior.png")
 	if "--capture" in OS.get_cmdline_user_args() and frame==130:
 		get_tree().quit()
+
+
+
+
 
 
