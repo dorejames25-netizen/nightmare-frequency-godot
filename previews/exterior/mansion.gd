@@ -1,7 +1,7 @@
 extends Node3D
 # Exterior envelope only. Blueprint room records remain data, not built rooms.
 const SHIFT := Vector3(-25.6, 0, -43.295)
-var ink: StandardMaterial3D
+var ink: ShaderMaterial
 var cyan: ShaderMaterial
 var pink: ShaderMaterial
 var lines: SurfaceTool
@@ -43,10 +43,7 @@ func rectangle(x: float, y: float,z: float,w: float,h: float) -> void:
 	stroke(a,b,true); stroke(b,c,true); stroke(c,d,true); stroke(d,a,true)
 func _ready() -> void:
 	var plan: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://plans/mansion_layout.json"))
-	ink=StandardMaterial3D.new()
-	ink.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED
-	ink.albedo_color=Color(0.012,0.035,0.029)
-	ink.cull_mode=BaseMaterial3D.CULL_DISABLED
+	ink=load("res://materials/mansion_emerald.tres")
 	cyan=ShaderMaterial.new()
 	cyan.shader=load("res://outline.gdshader")
 	cyan.set_shader_parameter("line_color",Color(0.08,0.72,0.43))
@@ -208,4 +205,5 @@ func build_grounds() -> void:
 	for x in [-12.0,63.2]:
 		path_strip("SideGardenPath",x,-5,3,64)
 		for z in [-34.0,-18.0,0.0,20.0]: tree(x+(-3 if x<0 else 3),z)
+
 

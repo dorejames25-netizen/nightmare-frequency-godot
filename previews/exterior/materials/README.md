@@ -1,0 +1,6 @@
+# Emerald surface tool
+Open mansion_emerald.tres in Godot's Inspector. Shader Parameters expose grid spacing (metres), grid/rain brightness, speed (positive rises, negative falls), density, symbol size, glitch strength, pulse speed, base and effect colours.
+Duplicate this material with Make Unique before adjusting another wall or scene independently. Assign it to any MeshInstance3D Material Override. World-space projection keeps the 0.55 metre squares consistent across scaled meshes and walls. The shader handles horizontal surfaces and either vertical wall axis.
+For a background or screen QuadMesh, enable Use UV and set UV Size Metres to its desired virtual size. This is a reusable editor material tool, not a game HUD/menu. UV projection is preferable on strongly curved art surfaces. World projection uses dominant-axis mapping.
+Based on the supplied HTML's emerald palette, brightness/speed/density controls and mutating luminous streams. This is a native procedural Godot adaptation using binary glyphs; it does not embed the HTML, emojis, sacred symbols, mouse interaction or all its modes. No bloom or reflections required. Existing edge outlines remain separate.
+All mansion surfaces using the dark base material receive it, including walls, roof and dark landscape props/path surfaces. Outdoor free-standing upward rain remains independent.
