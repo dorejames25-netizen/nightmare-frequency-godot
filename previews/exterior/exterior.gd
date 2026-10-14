@@ -88,6 +88,7 @@ func _ready() -> void:
 			var z: float=gz+rng.randf_range(-3,3)
 			var rain_material:=ShaderMaterial.new()
 			rain_material.shader=load("res://rain.gdshader")
+			rain_material.set_shader_parameter("glyph_atlas",load("res://materials/glitch_glyphs.svg"))
 			rain_material.set_shader_parameter("phase",rng.randf_range(0,10))
 			for angle in [0.0,PI/2.0]:
 				var rain:=MeshInstance3D.new()
@@ -108,6 +109,7 @@ func _process(_delta: float) -> void:
 		get_viewport().get_texture().get_image().save_png("res://captures/mansion_site.png" if "--site" in OS.get_cmdline_user_args() else "res://captures/mansion_first_person.png" if "--near" in OS.get_cmdline_user_args() else "res://captures/exterior.png")
 	if "--capture" in OS.get_cmdline_user_args() and frame==130:
 		get_tree().quit()
+
 
 
 
