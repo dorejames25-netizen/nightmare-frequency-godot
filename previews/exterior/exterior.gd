@@ -73,17 +73,27 @@ func _ready() -> void:
 		star.material_override=m
 		stars.append(star)
 		add_child(star)
-	# Two restrained data curtains, inspired by the browser rain generator.
-	for side in [-1,1]:
-		var rain:=MeshInstance3D.new()
-		var panel:=QuadMesh.new()
-		panel.size=Vector2(32,42)
-		rain.mesh=panel
-		rain.position=Vector3(side*91,25,-72)
-		var shader:=ShaderMaterial.new()
-		shader.shader=load("res://rain.gdshader")
-		rain.material_override=shader
-		add_child(rain)
+	# Standard outdoor ambience: world-anchored patches, visible from every direction.
+	# Exclude the mansion, porticoes and terraces; indoor nightmare rain stays separate.
+	var rain_mesh:=QuadMesh.new()
+	rain_mesh.size=Vector2(14,24)
+	for gx in range(-108,109,24):
+		for gz in range(-108,109,24):
+			if abs(gx)<45 and gz>-66 and gz<6:
+				continue
+			var x: float=gx+rng.randf_range(-3,3)
+			var z: float=gz+rng.randf_range(-3,3)
+			var rain_material:=ShaderMaterial.new()
+			rain_material.shader=load("res://rain.gdshader")
+			rain_material.set_shader_parameter("phase",rng.randf_range(0,10))
+			for angle in [0.0,PI/2.0]:
+				var rain:=MeshInstance3D.new()
+				rain.name="OutdoorUpwardRain"
+				rain.mesh=rain_mesh
+				rain.position=Vector3(x,height_at(x,z)+12,z)
+				rain.rotation.y=angle
+				rain.material_override=rain_material
+				add_child(rain)
 func _process(_delta: float) -> void:
 	frame+=1
 	var seconds:=Time.get_ticks_msec()/1000.0
@@ -95,6 +105,7 @@ func _process(_delta: float) -> void:
 		get_viewport().get_texture().get_image().save_png("res://captures/mansion_first_person.png" if "--near" in OS.get_cmdline_user_args() else "res://captures/exterior.png")
 	if "--capture" in OS.get_cmdline_user_args() and frame==130:
 		get_tree().quit()
+
 
 
 

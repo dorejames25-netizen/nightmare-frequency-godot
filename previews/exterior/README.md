@@ -12,3 +12,5 @@ See licenses/PROVENANCE.md for artwork source and pending licence evidence.
 ## Mansion shell (provisional)
 Mansion geometry now added from plans/mansion_layout.json: four level volumes reserved, no rooms built. --near selects a 1.7 m eye-height review camera, not a playable FPS controller. Pending plan wall-thickness conflict (up to 20 cm room overlap); shell must not be treated as fully room-fit validated. See HANDOVER.md for outstanding envelope checks.
 Source: C:/GitHub/godot-ai-libary/mansion map plans/layout.json. The updated mansion plans copy was checked and is identical. Floor heights remain blueprint suggestions.
+
+Outdoor upward rain is now standard ambience across the terrain, using crossed world-space patches with independent phase and proximity fading. Mansion interior is excluded. This supersedes the original two-curtain setup. Walking controls and full panoramic horizon treatment remain pending.
