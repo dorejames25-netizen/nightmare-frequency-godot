@@ -14,3 +14,6 @@ Mansion geometry now added from plans/mansion_layout.json: four level volumes re
 Source: C:/GitHub/godot-ai-libary/mansion map plans/layout.json. The updated mansion plans copy was checked and is identical. Floor heights remain blueprint suggestions.
 
 Outdoor upward rain is now standard ambience across the terrain, using crossed world-space patches with independent phase and proximity fading. Mansion interior is excluded. This supersedes the original two-curtain setup. Walking controls and full panoramic horizon treatment remain pending.
+
+## Landscaped exterior
+Emerald/mint outlines now replace the original pink/cyan mansion accents. Projecting facade bays, cornices, entrance pediment and garden columns add exterior depth. Oval drive, approach, rear formal garden and side paths are original landscape proposals around the unchanged room reservations. --site displays the elevated site review. No movement controller is implemented.
